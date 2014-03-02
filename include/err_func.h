@@ -39,10 +39,29 @@ void _err_exit(const char *format, ...);
 
 void err_exit_en(const char *format, ...);
 
+/*
+ *	fatal function is used to diagnose general errors, including errors from 
+ *	library functions that don't set errno. Its argument list is the same as 
+ *	for printf, except that a terminating newline character is automatically 
+ *	appended to the output string. It prints the formatted output on standard
+ *	error and the terminate the program as with err_exit.
+ */
+
 void fatal(const char *format, ...);
 
+
+/*
+ *	usage_err function is used to diagnose errors in command-line argument
+ *	usage. It takes an argument list in the style of printf and prints the
+ *	string Usage: followed by the formatted output on standard error, and 
+ *	then terminates the program by calling exit.
+ */
 void usage_err(const char *format, ...);
 
+/*
+ *	cmd_line_err function is similar to usage_err, but is intended for diagnosing 
+ *	errors in the command-line arguments specified to program.
+ */
 void cmd_line_err(const char *format, ...);
 
 #endif
