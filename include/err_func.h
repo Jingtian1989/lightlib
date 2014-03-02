@@ -6,8 +6,8 @@ void err_msg(const char *format, ...);
 /*
  *	err_exit operates like err_msg, but also terminates the programs,
  *	either by calling exit() or, if the environment variables EF_DUMPCORE
- *  is defined with a nonempty string value, by calling abort() to produce
- *  a core dump file for use with debugger.
+ *	is defined with a nonempty string value, by calling abort() to produce
+ *	a core dump file for use with debugger.
  */
 
 void err_exit(const char *format, ...);
