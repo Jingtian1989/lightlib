@@ -5,7 +5,7 @@
 #ifndef BUF_SIZE /* allow "cc -D" to override definition */
 #define BUF_SIZE 1024
 #endif
-
+//	tlpi page 74
 int main(int argc, char *argv[])
 {
 
@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 	if (input_fd == -1)
 		err_exit("opening file %s", argv[1]);
 
+	/* O_TRUNC if file exists, truncate file to empty */
 	open_flags = O_CREAT | O_WRONLY | O_TRUNC;
 	file_perms = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH; /* rw-rw-rw- */
 	output_fd = open(argv[2], open_flags, file_perms);
