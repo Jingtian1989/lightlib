@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
 			else if (access_mode == O_RDWR)
 				printf("\t	O_RDWR");
 			printf("\n");
+			break;
 		default:
 			cmd_line_err("Argument must be [f|a]: %s\n", argv[2]);
 	}
