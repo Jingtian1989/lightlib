@@ -37,7 +37,7 @@ void _err_exit(const char *format, ...);
  *	function result.
  */
 
-void err_exit_en(const char *format, ...);
+void err_exit_en(int errnum, const char *format, ...);
 
 /*
  *	fatal function is used to diagnose general errors, including errors from 
