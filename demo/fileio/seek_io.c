@@ -8,7 +8,7 @@
  *		$ touch tfile
  *		$ ./seek_io tfile s1000000 wabc  //seek to offset 1000,000, write "abc"
  */
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
 	size_t len;
 	off_t offset;
@@ -70,6 +70,8 @@ int main(int argc, char const *argv[])
 				cmd_line_err("Argument must start with [rRws]: %s\n", argv[ap]);
 		}
 	}
-
+	if (close(fd) == -1)
+		err_exit("close file");
+	
 	exit(EXIT_SUCCESS);
 }
