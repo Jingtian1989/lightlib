@@ -1,4 +1,3 @@
-/*	functions for parsing numeric command-line arguments */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,18 +7,7 @@
 
 
 
-/* 
- * 	If the 'name' argument is non-NULL, it should contain a string identifying the 
- *	argument in arg. This string is included as part of any error message displayed
- *	by these functions.
- *	
- *	The 'flags' arguments provides some control over the operation of the getInt and
- *	getLong functions. By default, these functions expect strings containing signed 
- *	decimal integers. By ORing(|) one or more of the GN_* constants defined into flags
- *	, we can select alternative bases for conversion and restrict the range of the
- *	number to being nonnegative or greater than 0.
- *
- */
+/*	functions for parsing numeric command-line arguments */
 static gn_fail(const char *fname, const char *msg, const char *arg, const char *name)
 {
 	fprintf(stderr, "%s error", fname);
@@ -59,6 +47,18 @@ static long get_num(const char *fname, const char *arg, int flags, const char *n
 	return res;
 }
 
+/* 
+ * 	If the 'name' argument is non-NULL, it should contain a string identifying the 
+ *	argument in arg. This string is included as part of any error message displayed
+ *	by these functions.
+ *	
+ *	The 'flags' arguments provides some control over the operation of the getInt and
+ *	getLong functions. By default, these functions expect strings containing signed 
+ *	decimal integers. By ORing(|) one or more of the GN_* constants defined into flags
+ *	, we can select alternative bases for conversion and restrict the range of the
+ *	number to being nonnegative or greater than 0.
+ *
+ */
 
 long get_long(const char *arg, int flags, const char *name)
 {
