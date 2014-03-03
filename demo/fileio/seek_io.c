@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 		{
 			case 'r':	/*	display bytes at current offset, as text */
 			case 'R':	/*	display bytes at current offset, in hex	*/
-				len = get_long(&ap[ap][1], GN_ANY_BASE, argv[ap]);
+				len = get_long(&argv[ap][1], GN_ANY_BASE, argv[ap]);
 				buf = malloc(len);
 				if (buf == NULL)
 					err_exit("malloc");
