@@ -36,6 +36,8 @@ static void output_err(boolean use_err, int err, boolean flush_stdout, const cha
 	else
 		snprintf(err_text, BUF_SIZE, ":");
 
+	snprintf(buf, BUF_SIZE, "ERROR%s %s\n", err_text, user_msg);
+
 	if (flush_stdout)
 		fflush(stdout);
 	fputs(buf, stderr);
