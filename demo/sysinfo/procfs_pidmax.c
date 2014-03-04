@@ -39,5 +39,8 @@ int main(int argc, char *argv[])
 			"`cat /proc/sys/kernel/pid_max");
 	}
 
+	if (close(fd) == -1)
+		err_exit("close file");
+	
 	exit(EXIT_SUCCESS);
 }
