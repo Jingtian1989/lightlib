@@ -9,6 +9,16 @@
 /*
  *	usage:
  *		$ ./calendar_time
+ *		Seconds since the Epoch (1 Jan 1970): 1293548517 (about 40.991 years)
+ * 		gettimeofday() returned 1293548517 secs, 715616 microsecs
+ *		Broken down by gmtime():
+ *			year=110 mon=11 mday=28 hour=15 min=1 sec=57 wday=2 yday=361 isdst=0
+ *		Broken down by localtime():
+ * 			year=110 mon=11 mday=28 hour=16 min=1 sec=57 wday=2 yday=361 isdst=0
+ *		asctime() formats the gmtime() value as: Tue Dec 28 15:01:57 2010 
+ *		ctime() formats the time() value as:     Tue Dec 28 16:01:57 2010
+ *		mktime() of gmtime() value:    1293544917 secs
+ *		mktime() of localtime() value: 1293548517 secs
  */
 int main(int argc, char *argv[])
 {
