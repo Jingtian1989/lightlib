@@ -6,6 +6,12 @@
 #include <shadow.h>
 #include "light.h"
 
+
+/*
+ *	usage:
+ *		$ su 	Need privilege to read shadow password file
+ *		# ./check_pwd
+ */
 int main(int argc, char *argv[])
 {
 
