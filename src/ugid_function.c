@@ -32,6 +32,13 @@ uid_t get_user_id_from_name(const char *name)
 
 }
 
+char *get_group_name_from_id(gid_t gid)
+{
+	struct group *grp;
+	grp = getgrgid(gid);
+	return (grp == NULL) ? NULL : grp->gr_name;
+}
+
 gid_t get_group_id_from_name(const char *name)
 {
 	struct group *grp;
