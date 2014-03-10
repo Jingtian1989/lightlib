@@ -13,6 +13,7 @@
 #include "error_function.h"
 #include "get_number.h"
 
+
 typedef enum {false, true} boolean;
 
 #define min(m, n) ((m) < (n) ? (m) : (n))

@@ -10,7 +10,7 @@
  * Return NULL on error.
  */
 
- char *currTime(const char *format)
+ char *curr_time(const char *format)
  {
  	static char buf[BUF_SIZE]; /* Nonreentrant */
  	time_t t;
